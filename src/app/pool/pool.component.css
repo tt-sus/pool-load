@@ -1,0 +1,39 @@
+.operations input{
+      width: 66%;
+  font-family: Dosis,sans-serif;
+   letter-spacing: 1px;
+}
+.units{
+    font-size: 13px;
+}
+.operations{
+    background: #F7F7F7;
+    padding: 10px;
+    height:255px;
+}
+.attributes input{
+    width:66%;
+padding-left: 5px;
+   font-family: Dosis,sans-serif;
+   letter-spacing: 1px;
+ 
+}
+.attributes{
+    background: #F7F7F7;
+    padding: 10px;
+}
+.result{
+
+margin-bottom: 50px;
+}
+.edit{
+    border-radius: 50%;
+}
+.caculations input{
+    width:100%;
+       font-family: Dosis,sans-serif;
+   letter-spacing: 1px;
+}
+.desc{
+        font-size: 13px;
+}

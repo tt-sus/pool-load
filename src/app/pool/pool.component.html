@@ -1,0 +1,262 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-5">
+      <div class="result">
+          <h4>1000 <span>MTBU</span></h4>
+          <p>Annual Heat Required</p>
+          <button type="button" class="edit" data-toggle="modal" data-target="#myModal"> 
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+          </button>
+      </div>
+    </div>
+    <div class="col-lg-7">
+      <div class="image">
+
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-5">
+      <div class="operations">
+        <h4>POOL OPERATIONS</h4>
+        <div class="row">
+          <div class="col-lg-6">
+          <p>Air Temperature</p>
+        </div>
+        <div class="col-lg-3">
+          <input type="number" [(ngModel)]="airTemp" (keyup)="changeToSITemp()"><span class="units"> <sup> 0</sup> F </span>
+        </div>
+        <div class="col-lg-3">
+          <input type="number" [(ngModel)]="airTempCelcius" (keyup)="changeToIPTemp()"><span class="units"> <sup> 0</sup> C </span>
+        </div>
+        </div>
+       <div class="row">
+          <div class="col-lg-6">
+          <p>Water Temperature</p>
+        </div>
+        <div class="col-lg-3">
+          <input type="number" [(ngModel)]="waterTemp" (keyup)="changeToSITemp()"><span class="units"> <sup> 0</sup> F </span>
+        </div>
+        <div class="col-lg-3">
+          <input type="number" [(ngModel)]="waterTempCelcius" (keyup)="changeToIPTemp()"><span class="units"> <sup> 0</sup> C </span>
+        </div>
+        </div>
+       <div class="row">
+          <div class="col-lg-6">
+          <p>Operating Hours</p>
+        </div>
+        <div class="col-lg-3">
+          <input type="number" [(ngModel)]="opHours"><span class="units"> hrs </span>
+        </div>
+        <div class="col-lg-3">
+          <p>Annualy</p>
+        </div>
+        </div>
+       <div class="row">
+          <div class="col-lg-6">
+          <p>Refill Frequency</p>
+        </div>
+        <div class="col-lg-3">
+          <input type="number" [(ngModel)]="refillFreq">
+        </div>
+        <div class="col-lg-3">
+          <p>Annualy</p>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-7">
+      <div class="attributes">
+        <h4>POOL ATTRIBUTES</h4>
+        <div class="row">
+          <div class="col-lg-6">
+          <p>Depth</p>
+          </div>
+          <div class="col-lg-3">
+            <input type="number" [(ngModel)]="depth" (keyup)="changeToSI()"><span class="units"> Ft </span>
+          </div>
+          <div class="col-lg-3">
+            <input type="number" [(ngModel)]="depthSI" (keyup)="changeToIP()"><span class="units"> m </span>
+          </div>
+        </div>
+       <div class="row">
+          <div class="col-lg-6">
+          <p>Width</p>
+          </div>
+          <div class="col-lg-3">
+            <input type="number" [(ngModel)]="width" (keyup)="changeToSI()"><span class="units"> Ft </span>
+          </div>
+          <div class="col-lg-3">
+            <input type="number" [(ngModel)]="widthSI" (keyup)="changeToIP()"><span class="units"> m </span>
+          </div>
+        </div>
+       <div class="row">
+          <div class="col-lg-6">
+          <p>Length</p>
+        </div>
+        <div class="col-lg-3">
+            <input type="number" [(ngModel)]="length" (keyup)="changeToSI()"><span class="units"> Ft </span>
+          </div>
+          <div class="col-lg-3">
+            <input type="number" [(ngModel)]="lengthSI" (keyup)="changeToIP()"><span class="units"> m </span>
+          </div>
+        </div>
+       <div class="row">
+          <div class="col-lg-6">
+          <p>Area</p>
+        </div>
+        <div class="col-lg-3">
+          <p class="areaResult">{{width*length | number : '1.2-2'}} <span class="units"> ft<sup>2</sup> </span></p> 
+        </div>
+        <div class="col-lg-3">
+          <p  class="areaResult">{{widthSI*lengthSI | number : '1.2-2'}} <span class="units"> m<sup>2</sup> </span></p> 
+        </div>
+        </div>
+       <div class="row">
+          <div class="col-lg-6">
+          <p  class="volumeResult">Volume</p>
+        </div>
+          <div class="col-lg-3">
+         <p>{{width*length*depth | number : '1.2-2'}} <span class="units"> ft<sup>3</sup> </span></p> 
+        </div>
+        <div class="col-lg-3">
+           <p class="volumeResult">{{widthSI*lengthSI*depthSI | number : '1.2-2'}}  <span class="units"> m<sup>3</sup> </span></p>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--modal -->
+  <div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Modal Header</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body caculations">
+        <h4>Calculation Details</h4>
+        <div class="row">
+          <div class="col-lg-6">
+            <p>Surface Heat Loss (ks)</p>
+          </div>
+          <div class="col-lg-2">
+            <input type="number" [(ngModel)]="heatLoss">
+          </div>
+          <div class="col-lg-2">
+            <p>btu/hr</p>
+          </div>
+          <div class="col-lg-2">
+            <p class="desc">Typical: 4-7</p>
+          </div>
+        </div>
+         <div class="row">
+          <div class="col-lg-6">
+              <p>dT</p>
+          </div>
+          <div class="col-lg-2">
+             <input type="number" [(ngModel)]="dT">
+          </div>
+          <div class="col-lg-2">
+             <p>F</p>
+          </div>
+          <div class="col-lg-2">
+
+          </div>
+        </div>
+         <div class="row">
+          <div class="col-lg-6">
+               <p>dT Pickup</p> 
+          </div>
+          <div class="col-lg-2">
+            <input type="number" [(ngModel)]="dTPickup">
+          </div>
+          <div class="col-lg-2">
+            <p>Hr</p>
+          </div>
+          <div class="col-lg-2">
+
+          </div>
+        </div>
+        <h4>Evaporation Rate Calculator</h4>
+        <div class="row">
+          <div class="col-lg-6">
+               <p>Evap Coeff (O)</p>
+          </div>
+          <div class="col-lg-2">
+             <input type="number" [(ngModel)]="evapCoeff">
+          </div>
+          <div class="col-lg-2">
+              <p>kg/m2.h</p>
+          </div>
+          <div class="col-lg-2">
+
+          </div>
+        </div>
+         <div class="row">
+          <div class="col-lg-6">
+               <p>Evap Heat (HWE)</p>
+          </div>
+          <div class="col-lg-2">
+             <input type="number" [(ngModel)]="hwe">
+          </div>
+          <div class="col-lg-2">
+              <p>kJ/kg</p>
+          </div>
+          <div class="col-lg-2">
+
+          </div>
+        </div>
+         <div class="row">
+          <div class="col-lg-6">
+               <p>Humidity ratio in sat air (Xs)</p>
+          </div>
+          <div class="col-lg-2">
+             <input type="number" [(ngModel)]="Xs">
+          </div>
+          <div class="col-lg-2">
+              <p>kg/kg</p>
+          </div>
+          <div class="col-lg-2">
+            <span class="desc">Typical: 0.02</span>
+          </div>
+        </div>
+         <div class="row">
+          <div class="col-lg-6">
+               <p>Humidity ratio in the air (X)</p>
+          </div>
+          <div class="col-lg-2">
+             <input type="number" [(ngModel)]="humidAir">
+          </div>
+          <div class="col-lg-2">
+              <p>kg/kg</p>
+          </div>
+          <div class="col-lg-2">
+            <span class="desc">Typical: 0.0098</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+               <p>Velocity of air above the water (V)</p>
+          </div>
+          <div class="col-lg-2">
+             <input type="number" [(ngModel)]="velocity">
+          </div>
+          <div class="col-lg-2">
+              <p>m/s</p>
+          </div>
+          <div class="col-lg-2">
+              <span class="desc">Typical: 0.5</span>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
