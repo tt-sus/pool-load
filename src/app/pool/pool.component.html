@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-lg-5">
       <div class="result">
-          <h4>1000 <span>MTBU</span></h4>
+          <h4>{{annualHeat}} <span>MTBU</span></h4>
           <p>Annual Heat Required</p>
           <button type="button" class="edit" data-toggle="modal" data-target="#myModal"> 
             <i class="fa fa-pencil" aria-hidden="true"></i>
@@ -253,6 +253,7 @@
         </div>
       </div>
       <div class="modal-footer">
+         <button type="button" class="btn btn-default" data-dismiss="modal" (click)="calculate()">Edit</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>

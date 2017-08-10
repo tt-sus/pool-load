@@ -54,5 +54,34 @@ changeToIPTemp(){
 
   ngOnInit() {
   }
+//Internal variables
+gs:number;
+volume:number;
+qHeatup:number;
+qSurface:number;
+qTotal:number;
+area:number;
+annualHeat:number;
+evapSurfaceArea:number;
+heatSupplied:number;
+calculate(){
+  this.area=this.width*this.length;
+  this.volume=this.width*this.length*this.depth;
+  this.qHeatup=this.volume*8.34*this.dT/(this.dTPickup*1000);
+  console.log("qheatUp is"+this.qHeatup);
+
+  this.qSurface=this.heatLoss*(this.airTemp-this.waterTemp)*this.area/1000;
+  console.log("qSurface is"+this.qSurface);
+  
+  this.qTotal=this.qSurface+this.qHeatup;
+  this.evapSurfaceArea=this.length*this.width*0.93*0.93;
+  this.gs=this.evapCoeff*this.evapSurfaceArea*(this.Xs-this.humidAir)/3600;
+  
+  this.heatSupplied=this.hwe*this.gs;
+  this.annualHeat=((this.qHeatup*this.refillFreq*24)+(this.qSurface+this.opHours)+(this.heatSupplied*this.opHours))/1000;
+
+
+}
+
 
 }
