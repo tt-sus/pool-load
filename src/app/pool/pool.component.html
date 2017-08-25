@@ -2,8 +2,14 @@
   <div class="row">
     <div class="col-lg-5">
       <div class="result">
-          <h4>{{annualHeat}} <span>MTBU</span></h4>
+          <h4>{{annualHeat | number : '1.2-2'}} <span>MTBU</span></h4>
           <p>Annual Heat Required</p>
+          <h4>{{qHeatup | number : '1.2-2'}} <span>MBH</span></h4>
+          <p>QHeat up</p>
+          <h4>{{qSurface | number : '1.2-2'}} <span>MBH</span></h4>
+          <p>Q Surface</p>
+          <h4>{{heatsuppliedIp | number : '1.2-2'}} <span>MBH</span></h4>
+          <p>Heat Supplied</p>
           <button type="button" class="edit" data-toggle="modal" data-target="#myModal"> 
             <i class="fa fa-pencil" aria-hidden="true"></i>
           </button>
@@ -117,10 +123,10 @@
           <p  class="volumeResult">Volume</p>
         </div>
           <div class="col-lg-3">
-         <p>{{width*length*depth | number : '1.2-2'}} <span class="units"> ft<sup>3</sup> </span></p> 
+         <p>{{width*length*depth*7.5 | number : '1.2-2'}} <span class="units"> gal </span></p> 
         </div>
         <div class="col-lg-3">
-           <p class="volumeResult">{{widthSI*lengthSI*depthSI | number : '1.2-2'}}  <span class="units"> m<sup>3</sup> </span></p>
+           <p class="volumeResult">{{widthSI*lengthSI*depthSI*7.5 | number : '1.2-2'}}  <span class="units"> gal</span></p>
         </div>
         </div>
       </div>
@@ -143,7 +149,7 @@
             <p>Surface Heat Loss (ks)</p>
           </div>
           <div class="col-lg-2">
-            <input type="number" [(ngModel)]="heatLoss">
+            <input type="number" [(ngModel)]="heatLoss" >
           </div>
           <div class="col-lg-2">
             <p>btu/hr</p>
