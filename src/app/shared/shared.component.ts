@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-shared',
@@ -6,9 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./shared.component.css']
 })
 export class SharedComponent implements OnInit {
-
+  @Output() onChange: EventEmitter<any> = new EventEmitter<any>();
   constructor() { }
-
+change(){
+  this.onChange.emit()
+}
   ngOnInit() {
   }
 

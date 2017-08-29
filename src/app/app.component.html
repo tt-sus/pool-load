@@ -12,7 +12,8 @@
       </button>
      
       </li>
-    <li> POOL LOAD CALCULATOR</li>
+    <li *ngIf="change"> Hot Water Savings</li>
+    <li *ngIf="!change">Pool Load Calculator</li>
     </ul>
     <ul class="nav navbar-nav navbar-right pull-right">
       <li><a class="navbar-brand right" href="#">Sustainability  | ThorntonTomasetti </a></li>
@@ -20,5 +21,5 @@
   </div>
   </div>
 </nav>
-<app-shared [@slideInOut]="menuState"></app-shared>
+<app-shared [@slideInOut]="menuState" (onChange)="changeTitle()"></app-shared>
 <router-outlet></router-outlet>
