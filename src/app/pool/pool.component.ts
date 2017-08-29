@@ -75,6 +75,7 @@ area:number;
 annualHeat:number;
 evapSurfaceArea:number;
 heatSupplied:number;
+
 calculate(){
   this.evapCoeff=25+(19*this.velocity)
   this.area=this.width*this.length;
