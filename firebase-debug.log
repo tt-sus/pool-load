@@ -1,0 +1,36 @@
+[debug] [2017-08-30T16:23:55.878Z] ----------------------------------------------------------------------
+[debug] [2017-08-30T16:23:55.878Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\aksha\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase deploy
+[debug] [2017-08-30T16:23:55.878Z] CLI Version:   3.9.2
+[debug] [2017-08-30T16:23:55.878Z] Platform:      win32
+[debug] [2017-08-30T16:23:55.878Z] Node Version:  v6.11.2
+[debug] [2017-08-30T16:23:55.878Z] Time:          Wed Aug 30 2017 12:23:55 GMT-0400 (Eastern Daylight Time)
+[debug] [2017-08-30T16:23:55.878Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-08-30T16:23:55.894Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-08-30T16:23:55.894Z] > authorizing via signed-in user
+[debug] [2017-08-30T16:23:55.894Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-08-30T16:23:55.894Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/cN_Pgopu2s-5c4ad0DrbKdCZEfmEOGCNUDDenTPkmaQMTwsu7qcHQCM6eAXKWe6H',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Wed Aug 30 2017 12:23:55 GMT-0400 (Eastern Daylight Time)
+[debug] [2017-08-30T16:23:56.107Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-30T16:23:56.153Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/pool-load  
+ Wed Aug 30 2017 12:23:56 GMT-0400 (Eastern Daylight Time)
+[debug] [2017-08-30T16:26:53.217Z] ----------------------------------------------------------------------
+[debug] [2017-08-30T16:26:53.217Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\aksha\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase deploy
+[debug] [2017-08-30T16:26:53.217Z] CLI Version:   3.9.2
+[debug] [2017-08-30T16:26:53.217Z] Platform:      win32
+[debug] [2017-08-30T16:26:53.217Z] Node Version:  v6.11.2
+[debug] [2017-08-30T16:26:53.217Z] Time:          Wed Aug 30 2017 12:26:53 GMT-0400 (Eastern Daylight Time)
+[debug] [2017-08-30T16:26:53.217Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-08-30T16:26:53.234Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-08-30T16:26:53.235Z] > authorizing via signed-in user
+[debug] [2017-08-30T16:26:53.238Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/pool-load  
+ Wed Aug 30 2017 12:26:53 GMT-0400 (Eastern Daylight Time)
+[debug] [2017-08-30T16:26:54.363Z] <<< HTTP RESPONSE 200
+[debug] [2017-08-30T16:26:54.363Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/pool-load/tokens  
+ Wed Aug 30 2017 12:26:54 GMT-0400 (Eastern Daylight Time)
+[debug] [2017-08-30T16:26:54.766Z] <<< HTTP RESPONSE 200

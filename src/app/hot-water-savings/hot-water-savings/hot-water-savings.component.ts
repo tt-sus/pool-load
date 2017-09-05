@@ -6,13 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hot-water-savings.component.css']
 })
 export class HotWaterSavingsComponent implements OnInit {
+  mirror: number;
   ratio: number;
   TotalWaterUsage_d: number=3436;
 //design
 //shower-all initials for shortform
 totalShowerUsage_d:number;
-showerUsage_per_d:number=0.625;
-showerUsage_per_b:number=0.625;
+showerUsage_per_d:number=62.5;
+showerUsage_per_b:number=62.5;
 hcRatio_s_d:number=0.7;
 tshwu_d:number;
 re_d:number=55;
@@ -42,6 +43,7 @@ thw_f_b:number;
 savings:number;
   constructor() { }
 calculate(){
+  this.showerUsage_per_d=this.showerUsage_per_d/100
   this.re_d=this.re_d/100;
   this.re_b=this.re_b/100;
   this.totalShowerUsage_d=this.TotalWaterUsage_d*this.showerUsage_per_d;
@@ -75,6 +77,7 @@ calculate(){
   this.re_b=this.re_b*100;
   this.re_d=Math.round(this.re_d * 100) / 100;
   this.rhw_d=Math.round(this.rhw_d * 100) / 100;
+  this.showerUsage_per_d=this.showerUsage_per_d*100
 }
 placement:number=1;
 select(){

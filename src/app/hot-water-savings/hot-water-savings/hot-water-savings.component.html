@@ -1,4 +1,21 @@
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded ">
+  <div class="container">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        Hot Water Savings
+      </li>
 
+    </ul>
+    <ul class="nav navbar-nav navbar-right pull-right navbar-toggler-right">
+      <li><a class="navbar-brand right" href="https://ttsustainability.com">SUSTAINABILITY  | ThorntonTomasetti </a></li>
+    </ul>
+  </div>
+  </div>
+</nav>
 <div class="container">
   <div class="row result-image">
     <div class="col-lg-5">
@@ -45,10 +62,10 @@
               <p class="label">Total Shower Usage</p>
               </div>
               <div class="col-lg-3">
-                <input type="number" [(ngModel)]="showerUsage_per_d" (keyup)="calculate()"> <span class="units"> % </span>
+                <input type="number" [(ngModel)]="showerUsage_per_d" (keyup)="calculate()" > <span class="units"> % </span>
               </div>
               <div class="col-lg-3">
-                <input type="number" [(ngModel)]="showerUsage_per_b"(keyup)="calculate()"> <span class="units"> % </span>
+                {{showerUsage_per_d}} <span class="units"> % </span>
               </div>
             </div>
             <div class="row">
@@ -62,7 +79,7 @@
                 <input type="number" [(ngModel)]="hcRatio_s_b"(keyup)="calculate()"> 
               </div>
             </div>
-            <p class="note">
+            <p class="note margin">
                 Note:
             </p>
             <p class="note">
@@ -87,7 +104,7 @@
                       <p>Recovered HW (from Power Pipe)**</p>
                   </div>
                   <div class="col-lg-6">
-                    <input type="number" [(ngModel)]="rhw_d"(keyup)="calculate()"><span class="units"> Kgal </span>
+                  {{rhw_d}}<span class="units"> Kgal </span>
                   </div>
                   <div class="clearfix"></div>
               </div> 
