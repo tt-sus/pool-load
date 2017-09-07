@@ -11,7 +11,7 @@
 
     </ul>
     <ul class="nav navbar-nav navbar-right pull-right navbar-toggler-right">
-      <li><a class="navbar-brand right" href="https://ttanalytics.com">SUSTAINABILITY  | ThorntonTomasetti </a></li>
+      <li><a class="navbar-brand right" href="https://www.ttanalytics.com">SUSTAINABILITY  | ThorntonTomasetti </a></li>
     </ul>
   </div>
   </div>
@@ -20,14 +20,14 @@
   <div class="row">
     <div class="col-lg-5">
       <div class="result">
-          <h4>{{annualHeat | number : '1.2-2'}} <span>MTBU</span></h4>
+          <h4>{{annualHeat | number : '1.2-2'}} <span>MBTU</span></h4>
           <p>Annual Heat Required</p>
           <h4>{{qHeatup | number : '1.2-2'}} <span>MBH</span></h4>
-          <p>QHeat up</p>
+          <p>Qh, Refill Load</p>
           <h4>{{qSurface | number : '1.2-2'}} <span>MBH</span></h4>
-          <p>Q Surface</p>
+          <p>Qs, Surface Evaporation Load</p>
           <h4>{{heatsuppliedIp | number : '1.2-2'}} <span>MBH</span></h4>
-          <p>Heat Supplied</p>
+          <p>Qe, evaporation Load</p>
           <button type="button" class="edit" data-toggle="modal" data-target="#myModal"> 
             <i class="fa fa-pencil" aria-hidden="true"></i>
           </button>
@@ -35,7 +35,7 @@
     </div>
     <div class="col-lg-7">
       <div class="image">
-          <img src="https://firebasestorage.googleapis.com/v0/b/qaqc-f9eac.appspot.com/o/pool.PNG?alt=media&token=164bc281-f8c1-4974-8b2b-25cb76fc8cc1" />
+          <img src="https://firebasestorage.googleapis.com/v0/b/pool-load.appspot.com/o/pool%20load.png?alt=media&token=48713b09-275c-465e-8c4a-ca9a01923c3d" />
       </div>
     </div>
   </div>
@@ -70,7 +70,7 @@
           <p>Operating Hours</p>
         </div>
         <div class="col-lg-3">
-          <input type="number" [(ngModel)]="opHours"><span class="units"> hrs </span>
+          <input type="number" [(ngModel)]="opHours" (keyup)="calculate()"><span class="units" > hrs </span>
         </div>
         <div class="col-lg-3">
           <p>Annualy</p>
@@ -81,7 +81,7 @@
           <p>Refill Frequency</p>
         </div>
         <div class="col-lg-3">
-          <input type="number" [(ngModel)]="refillFreq">
+          <input type="number" [(ngModel)]="refillFreq" (keyup)="calculate()">
         </div>
         <div class="col-lg-3">
           <p>Annualy</p>
@@ -130,10 +130,10 @@
           <p>Area</p>
         </div>
         <div class="col-lg-3">
-          <p class="areaResult">{{width*length | number : '1.2-2'}} <span class="units"> ft<sup>2</sup> </span></p> 
+          <p class="areaResult">{{width*length | number : '1.0-0'}} <span class="units"> ft<sup>2</sup> </span></p> 
         </div>
         <div class="col-lg-3">
-          <p  class="areaResult">{{widthSI*lengthSI | number : '1.2-2'}} <span class="units"> m<sup>2</sup> </span></p> 
+          <p  class="areaResult">{{widthSI*lengthSI | number : 0}} <span class="units"> m<sup>2</sup> </span></p> 
         </div>
         </div>
        <div class="row">
@@ -141,10 +141,10 @@
           <p  class="volumeResult">Volume</p>
         </div>
           <div class="col-lg-3">
-         <p>{{width*length*depth*7.5 | number : '1.2-2'}} <span class="units"> gal </span></p> 
+         <p>{{width*length*depth*7.5 | number : 0}} <span class="units"> gal </span></p> 
         </div>
         <div class="col-lg-3">
-           <p class="volumeResult">{{widthSI*lengthSI*depthSI*7.5 | number : '1.2-2'}}  <span class="units"> gal</span></p>
+           <p class="volumeResult">{{widthSI*lengthSI*depthSI*7.5 | number : 0}}  <span class="units"> gal</span></p>
         </div>
         </div>
       </div>
