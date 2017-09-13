@@ -21,13 +21,13 @@
     <div class="col-lg-5">
       <div class="result">
           <h4>{{annualHeat | number : '1.2-2'}} <span>MBTU</span></h4>
-          <p>Annual Heat Required</p>
+          <p>Annual Heat Load</p>
           <h4>{{qHeatup | number : '1.2-2'}} <span>MBH</span></h4>
           <p>Qh, Refill Load</p>
           <h4>{{qSurface | number : '1.2-2'}} <span>MBH</span></h4>
           <p>Qs, Surface Evaporation Load</p>
           <h4>{{heatsuppliedIp | number : '1.2-2'}} <span>MBH</span></h4>
-          <p>Qe, evaporation Load</p>
+          <p>Qe, Evaporation Load</p>
           <button type="button" class="edit" data-toggle="modal" data-target="#myModal"> 
             <i class="fa fa-pencil" aria-hidden="true"></i>
           </button>
@@ -73,7 +73,7 @@
           <input type="number" [(ngModel)]="opHours" (keyup)="calculate()"><span class="units" > hrs </span>
         </div>
         <div class="col-lg-3">
-          <p>Annualy</p>
+          <p>Annually</p>
         </div>
         </div>
        <div class="row">
@@ -84,7 +84,7 @@
           <input type="number" [(ngModel)]="refillFreq" (keyup)="calculate()">
         </div>
         <div class="col-lg-3">
-          <p>Annualy</p>
+          <p>Annually</p>
         </div>
         </div>
       </div>
@@ -157,7 +157,7 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title">Modal Header</h4>
+        <h4 class="modal-title">Edit Attributes</h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body caculations">

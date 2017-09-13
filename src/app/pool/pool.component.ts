@@ -44,11 +44,11 @@ changeToSITemp(){
   this.calculate();
 }
 changeToIP(){
-  this.width=3.280*this.widthSI;
+  this.width=3.28084*this.widthSI;
   this.width=Math.round(this.width * 10) / 10;
-  this.length=3.280*this.lengthSI;
+  this.length=3.28084*this.lengthSI;
   this.length=Math.round(this.length * 10) / 10;
-  this.depth=3.280*this.depthSI;
+  this.depth=3.28084*this.depthSI;
   this.depth=Math.round(this.depth * 10) / 10;
   this.calculate();
 }
